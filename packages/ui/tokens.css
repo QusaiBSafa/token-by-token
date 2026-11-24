@@ -1,11 +1,11 @@
 :root {
-  --tbt-paper: #fafaf7;
-  --tbt-panel: #ffffff;
-  --tbt-ink: #1f2328;
-  --tbt-muted: #4b545d;
-  --tbt-line: #d5d7d0;
-  --tbt-grid: #ecece6;
-  --tbt-accent: #1d5ad6;
+  --tbt-paper: #f4ebe0;
+  --tbt-panel: #fcf8f1;
+  --tbt-ink: #2a221b;
+  --tbt-muted: #5a4d40;
+  --tbt-line: #dccfbb;
+  --tbt-grid: #eadfcd;
+  --tbt-accent: #b3380a;
   --tbt-ok: #12744a;
   --tbt-warn: #8a5200;
   --tbt-err: #b3261e;
