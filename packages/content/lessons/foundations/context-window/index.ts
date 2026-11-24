@@ -27,21 +27,21 @@ export function windowScene(window: number, messages: number, opts: { showCost?:
     nodes.push(
       isKept
         ? { id: `m${i}`, kind: "token", x: trayX + 8 + slot * SLOT + (SLOT - TILE_W) / 2, y: trayY + 20, w: TILE_W, h: TILE_H, props: { label: `m${i}`, from: "user", color: ((i - 1) % 8) + 1 } }
-        : // dropped messages slide out to the left of the tray and fade
-          { id: `m${i}`, kind: "token", x: Math.max(20, trayX - 30 - (dropped - i) * 8), y: trayY + 110, w: TILE_W, h: TILE_H, state: "ghost", props: { label: `m${i}`, color: ((i - 1) % 8) + 1 } },
+        : // dropped messages slide out below the tray and fade
+          { id: `m${i}`, kind: "token", x: trayX + 8 + (i - Math.max(1, dropped - 2)) * SLOT + (SLOT - TILE_W) / 2, y: trayY + 100, w: TILE_W, h: TILE_H, state: "ghost", props: { label: `m${i}`, color: ((i - 1) % 8) + 1 } },
     );
   }
   let billed = 0;
   for (let i = 1; i <= messages; i++) billed += Math.min(i, window) * TOKENS_PER_MESSAGE;
   const used = kept * TOKENS_PER_MESSAGE;
   const cost = (billed / 1_000_000) * USD_PER_MILLION_INPUT;
-  if (dropped > 0) nodes.push({ id: "forgot", kind: "callout", x: 40, y: 400, w: 330, h: 54, props: { text: `${dropped} oldest message${dropped > 1 ? "s" : ""} no longer fit.\nThe model cannot see them.` } });
+  if (dropped > 0) nodes.push({ id: "forgot", kind: "callout", x: 315, y: 440, w: 330, h: 54, props: { text: `${dropped} oldest message${dropped > 1 ? "s" : ""} no longer fit.\nThe model cannot see them.` } });
   return {
     nodes,
     edges: [{ id: "send", from: "tray", to: "model", label: "whole window sent every turn", style: "dashed" }],
     flows: opts.showCost ? [{ edge: "send", packets: Math.min(6, kept), durationMs: 2200 }] : undefined,
     metrics: [
-      { id: "used", label: "Tokens in window", value: used, format: "int", warnAt: window * TOKENS_PER_MESSAGE * 0.8, dangerAt: window * TOKENS_PER_MESSAGE },
+      { id: "used", label: "Tokens in window", value: used, format: "int", warnAt: window * TOKENS_PER_MESSAGE * 0.8 },
       ...(opts.showCost || messages > 0 ? [{ id: "billed", label: "Tokens billed so far", value: billed, format: "int" as const }] : []),
       ...(opts.showCost ? [{ id: "cost", label: "Input cost so far (illustrative)", value: cost, format: "usd" as const, warnAt: 0.01 }] : []),
     ],

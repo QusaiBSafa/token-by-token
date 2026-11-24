@@ -37,7 +37,7 @@ export default function Home() {
         <p className="sub">From one prompt to a production AI system.</p>
         <div className="cards">
           {modules.filter((m) => !m.live).map((m) => (
-            <div key={m.id} className="card" style={{ opacity: 0.7 }}>
+            <div key={m.id} className="card" style={{ borderStyle: "dashed" }}>
               <span className="pill">Module {m.number} · coming soon</span>
               <h3>{m.title}</h3>
               <p>{m.blurb}</p>

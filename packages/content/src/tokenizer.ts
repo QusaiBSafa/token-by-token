@@ -39,9 +39,10 @@ export function tokenize(text: string, max = 28): string[] {
         rest = rest.slice(hit.length);
         continue;
       }
-      const ch = [...rest][0]!;
+      let ch = [...rest][0]!;
+      if (ch === " " && rest.length > 1) ch = rest.slice(0, 2).length === 2 && rest.charCodeAt(1) < 128 ? rest.slice(0, 2) : ch;
       rest = rest.slice(ch.length);
-      if (ch.charCodeAt(0) < 128) out.push(ch);
+      if (ch.charCodeAt(ch.length - 1) < 128) out.push(ch);
       else
         for (const b of new TextEncoder().encode(ch)) {
           if (out.length < max) out.push(`<0x${b.toString(16).toUpperCase().padStart(2, "0")}>`);

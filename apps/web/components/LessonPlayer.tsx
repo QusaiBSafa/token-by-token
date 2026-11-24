@@ -12,6 +12,12 @@ export function LessonPlayer({ lessonId, initialStep }: { lessonId: string; init
   const { store, state, scene, step, gated, reduced } = useLessonPlayer(lesson, initialStep);
   const [slow] = useState(false);
   const first = useRef(true);
+  const sideRef = useRef<HTMLDetailsElement>(null);
+  const [hydrated, setHydrated] = useState(false);
+  useEffect(() => setHydrated(true), []);
+  useEffect(() => {
+    if (window.innerWidth < 1024 && sideRef.current) sideRef.current.open = false;
+  }, []);
 
   // keep the URL shareable without remounting the canvas
   useEffect(() => {
@@ -37,8 +43,8 @@ export function LessonPlayer({ lessonId, initialStep }: { lessonId: string; init
   useEffect(() => setFb(null), [step.id]);
 
   return (
-    <div className="wrap player">
-      <details className="side" open={undefined}>
+    <div className="wrap player" data-hydrated={hydrated}>
+      <details className="side" ref={sideRef} open>
         <summary>{mod.title} · {siblings.length} lessons</summary>
         <ol>
           {siblings.map((l) => (

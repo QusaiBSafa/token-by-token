@@ -37,7 +37,7 @@ const clusterScene: Scene = { nodes: [mapBox, ...words.map((w) => tile(w, "map",
 
 const analogyScene: Scene = {
   nodes: [mapBox, ...words.map((w) => tile(w, "map", 0, ["man", "woman", "king", "queen"].includes(w.w) ? "active" : undefined)),
-    { id: "formula", kind: "callout", x: MAP.x + 20, y: MAP.y + 420, w: 330, h: 40, props: { text: "king − man + woman ≈ queen" } }],
+    { id: "formula", kind: "callout", x: MAP.x + 160, y: MAP.y + 12, w: 330, h: 40, props: { text: "king − man + woman ≈ queen" } }],
   edges: [
     { id: "a1", from: "man", to: "woman", label: "+ female", style: "dashed" },
     { id: "a2", from: "king", to: "queen", label: "+ female", style: "dashed" },

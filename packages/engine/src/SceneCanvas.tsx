@@ -83,7 +83,7 @@ export function SceneCanvas({ scene, ariaLabel, instant, fast, slow, reduced, de
               />
               {e.label && (
                 <motion.text initial={false} animate={{ x: line.mid.x, y: line.mid.y - 8, opacity: dim }} transition={{ default: pos, opacity: fade }}
-                  textAnchor="middle" fontFamily="var(--font-ui)" fontSize={12} fill="var(--tbt-muted)" style={{ paintOrder: "stroke", stroke: "var(--tbt-panel)", strokeWidth: 4 }}>
+                  textAnchor="middle" fontFamily="var(--font-ui)" fontSize={13} fill="var(--tbt-muted)" style={{ paintOrder: "stroke", stroke: "var(--tbt-panel)", strokeWidth: 4 }}>
                   {e.label}
                 </motion.text>
               )}

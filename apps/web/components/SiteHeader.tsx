@@ -6,9 +6,9 @@ export function SiteHeader() {
   return (
     <header className="site-header">
       <div className="wrap">
-        <Link href="/" className="brand">
+        <Link href="/" className="brand" aria-label="Token by Token home">
           <span className="brand-mark" aria-hidden="true"><i /><i /><i /></span>
-          Token by Token
+          <span className="brand-text">Token by Token</span>
         </Link>
         <nav className="nav" aria-label="Main">
           <Link href="/learn">Course</Link>
