@@ -1,0 +1,12 @@
+{
+  "source": "illustrative",
+  "model": "byte-level BPE (shape of real output; ids and merges are hand-written)",
+  "generatedAt": "2026-11-24",
+  "script": "hand-written (replace via tools/traces/tokenize.py)",
+  "sentence": "Unbelievable results!",
+  "tokens": ["Un", "believ", "able", " results", "!"],
+  "ids": [3118, 15532, 540, 2482, 0],
+  "arabic": { "sentence": "نتائج لا تصدق!", "tokens": ["<0xD9>", "<0x86>", "تائج", " لا", " ت", "صد", "ق", "<0xD8>", "!"] },
+  "word": "believable",
+  "merges": [["e", "v"], ["l", "i"], ["b", "e"], ["be", "li"], ["beli", "ev"], ["a", "b"], ["ab", "l"], ["abl", "e"]]
+}

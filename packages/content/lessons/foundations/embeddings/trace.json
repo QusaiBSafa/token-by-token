@@ -1,0 +1,21 @@
+{
+  "source": "illustrative",
+  "model": "2D layout hand-placed to resemble a UMAP of sentence embeddings",
+  "generatedAt": "2026-11-24",
+  "script": "hand-written (replace via tools/traces/embed.py)",
+  "words": [
+    { "w": "cat", "u": 0.12, "v": 0.2, "group": "animals" },
+    { "w": "dog", "u": 0.22, "v": 0.14, "group": "animals" },
+    { "w": "horse", "u": 0.1, "v": 0.34, "group": "animals" },
+    { "w": "apple", "u": 0.18, "v": 0.78, "group": "fruit" },
+    { "w": "banana", "u": 0.1, "v": 0.9, "group": "fruit" },
+    { "w": "orange", "u": 0.3, "v": 0.88, "group": "fruit" },
+    { "w": "car", "u": 0.44, "v": 0.12, "group": "vehicles" },
+    { "w": "truck", "u": 0.5, "v": 0.26, "group": "vehicles" },
+    { "w": "bike", "u": 0.36, "v": 0.28, "group": "vehicles" },
+    { "w": "man", "u": 0.5, "v": 0.66, "group": "people" },
+    { "w": "woman", "u": 0.64, "v": 0.8, "group": "people" },
+    { "w": "king", "u": 0.7, "v": 0.2, "group": "people" },
+    { "w": "queen", "u": 0.84, "v": 0.34, "group": "people" }
+  ]
+}

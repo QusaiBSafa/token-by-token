@@ -1,0 +1,14 @@
+{
+  "source": "illustrative",
+  "model": "gpt2-small (shape of real output; numbers rounded by hand)",
+  "generatedAt": "2026-11-24",
+  "script": "hand-written (replace via tools/traces/next_token.py)",
+  "prompt": ["The", " capital", " of", " France", " is"],
+  "steps": [
+    { "chosen": " Paris", "probs": [[" Paris", 0.71], [" the", 0.08], [" located", 0.05], [" a", 0.04], [" known", 0.03]] },
+    { "chosen": ",", "probs": [[",", 0.34], [".", 0.27], [" and", 0.12], [" is", 0.1], [" —", 0.06]] },
+    { "chosen": " the", "probs": [[" the", 0.31], [" which", 0.22], [" and", 0.12], [" a", 0.11], [" also", 0.08]] },
+    { "chosen": " largest", "probs": [[" largest", 0.21], [" capital", 0.18], [" city", 0.17], [" most", 0.14], [" seat", 0.06]] },
+    { "chosen": " city", "probs": [[" city", 0.58], [" metropolitan", 0.12], [" urban", 0.1], [" and", 0.07], [" in", 0.05]] }
+  ]
+}

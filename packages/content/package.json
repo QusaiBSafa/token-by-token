@@ -1,0 +1,14 @@
+{
+  "name": "@tbt/content",
+  "version": "0.0.0",
+  "private": true,
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "content:check": "tsx scripts/check.ts"
+  },
+  "dependencies": { "zod": "^4.6.7" },
+  "devDependencies": { "tsx": "^4.20.0", "typescript": "^5.9.3", "vitest": "^3.2.4", "@types/node": "^22.0.0" }
+}
